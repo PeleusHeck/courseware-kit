@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "courseware-kit"
+version = "0.1.0"
+description = "合并、拆分、提取课件并生成 Markdown 复习资料的命令行工具"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "pypdf",
+    "python-pptx",
+    "pypdfium2",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+courseware = "courseware.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["courseware", "courseware.*"]
