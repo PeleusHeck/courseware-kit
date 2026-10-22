@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "courseware-kit"
-version = "0.1.0"
+version = "0.2.0"
 description = "合并、拆分、提取课件并生成 Markdown 复习资料的命令行工具"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,13 +14,18 @@ dependencies = [
     "pypdf",
     "python-pptx",
     "pypdfium2",
+    "tkinterdnd2>=0.4.2",
 ]
 
 [project.optional-dependencies]
 test = ["pytest"]
+build = ["pyinstaller>=6"]
 
 [project.scripts]
 courseware = "courseware.cli:main"
+
+[project.gui-scripts]
+courseware-gui = "courseware.gui:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -7,7 +7,7 @@ def test_package_public_api(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     monkeypatch.syspath_prepend(str(project))
     package = import_module("courseware")
-    assert package.__version__ == "0.1.0"
+    assert package.__version__ == "0.2.0"
     assert set(package.__all__) == {
         "merge_pdfs", "split_pdf", "extract_pdf", "extract_pptx",
     }
